@@ -57,7 +57,12 @@ class HomeScreenState extends State<HomeScreen> {
           label: "Profil",
         ));
         viewContainer.add(const MenuProfile());
+
         return Scaffold(
+          //body ini diisi page yang ada di bottom navigation ada di folder root ui
+          //list menunnya di variable viewContainer dengan index tergantung yang diklik
+          body: viewContainer[currentIndex],
+          // ini bottom navigationnya
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: MyColors.white,
             currentIndex: currentIndex,
@@ -69,9 +74,9 @@ class HomeScreenState extends State<HomeScreen> {
                   currentIndex = index;
                 });
             },
+            //list bottom navigationnya isinya ada 5 diatas dangan variable listBottomNav
             items: listBottomNav,
           ),
-          body: viewContainer[currentIndex],
         );
       })(),
     );
