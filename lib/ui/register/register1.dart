@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 
+import 'package:purwakarta_app/widget/step_appbar.dart';
+
 class Register1 extends StatelessWidget {
   const Register1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: StepAppBar(index: 1, length: 6),
       body: SafeArea(
         child: Stack(
           children: [
@@ -78,23 +81,28 @@ class Register1 extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: MyColors.darkGrey),
-                    child: Center(
-                      child: Text(
-                        "Lanjutkan",
-                        style: GoogleFonts.manrope(
-                          textStyle: TextStyle(
-                              color: MyColors.white,
-                              fontSize: MyFontSize.medium2,
-                              fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: (() {
+                      child:
+                      Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: MyColors.darkGrey),
+                        child: Center(
+                          child: Text(
+                            "Lanjutkan",
+                            style: GoogleFonts.manrope(
+                              textStyle: TextStyle(
+                                  color: MyColors.white,
+                                  fontSize: MyFontSize.medium2,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
+                      );
+                    }),
                   ),
                 ],
               ),
