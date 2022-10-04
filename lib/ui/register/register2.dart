@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 
-class Register4 extends StatelessWidget {
-  const Register4({Key? key}) : super(key: key);
+class Register2 extends StatelessWidget {
+  const Register2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +11,12 @@ class Register4 extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
                   Align(
@@ -24,7 +24,7 @@ class Register4 extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 30),
                       child: Text(
-                        "Masukkan email aktif",
+                        "Dimana lokasi tempat tinggalmu?",
                         style: GoogleFonts.manrope(
                           textStyle: TextStyle(
                               color: MyColors.blackText,
@@ -39,7 +39,7 @@ class Register4 extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 30, top: 10),
                       child: Text(
-                        "Kami akan memberitahukan informasi lanjutan melalui email, pastikan email anda aktif",
+                        "Beri tahu kami lokasi tempat yang kamu tinggali saat ini ya",
                         style: GoogleFonts.manrope(
                           textStyle: TextStyle(
                               color: MyColors.blackText,
@@ -49,10 +49,10 @@ class Register4 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
-                  Container(
+                  SizedBox(
                     height: 60,
                     width: MediaQuery.of(context).size.width / 1.2,
                     child: TextField(
@@ -67,7 +67,7 @@ class Register4 extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                           borderSide: BorderSide(color: MyColors.blackText),
                         ),
-                        hintText: "Email",
+                        hintText: "Alamat",
                         hintStyle: TextStyle(
                             color: MyColors.blackText,
                             fontSize: MyFontSize.small3,
@@ -75,7 +75,7 @@ class Register4 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
@@ -83,7 +83,7 @@ class Register4 extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: MyColors.DarkGrey),
+                        color: MyColors.darkGrey),
                     child: Center(
                       child: Text(
                         "Lanjutkan",

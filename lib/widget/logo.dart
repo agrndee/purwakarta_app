@@ -1,4 +1,4 @@
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,8 +11,8 @@ class Logo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          padding: EdgeInsets.all(5),
-          child: Icon(
+          padding: const EdgeInsets.all(5),
+          child: const Icon(
             Icons.logo_dev,
             size: 50,
           ),

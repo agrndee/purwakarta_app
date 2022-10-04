@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 
-class Register3_1 extends StatelessWidget {
-  const Register3_1({Key? key}) : super(key: key);
+class Register31 extends StatelessWidget {
+  const Register31({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +11,12 @@ class Register3_1 extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
                   Align(
@@ -49,16 +49,16 @@ class Register3_1 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
                         child: TextField(
@@ -77,7 +77,7 @@ class Register3_1 extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
                         child: TextField(
@@ -96,7 +96,7 @@ class Register3_1 extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
                         child: TextField(
@@ -115,7 +115,7 @@ class Register3_1 extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
                         child: TextField(
@@ -135,7 +135,7 @@ class Register3_1 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -153,7 +153,7 @@ class Register3_1 extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(left: 5, right: 5),
+                        padding: const EdgeInsets.only(left: 5, right: 5),
                         child: Text(
                           "Kirim ulang",
                           style: GoogleFonts.manrope(
@@ -175,7 +175,7 @@ class Register3_1 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
                   Container(
@@ -183,7 +183,7 @@ class Register3_1 extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: MyColors.DarkGrey),
+                        color: MyColors.darkGrey),
                     child: Center(
                       child: Text(
                         "Lanjutkan",

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 import 'package:purwakarta_app/widget/logo.dart';
 
-class Register extends StatelessWidget {
-  const Register({Key? key}) : super(key: key);
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +12,20 @@ class Register extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
-                  Logo(),
-                  SizedBox(
+                  const Logo(),
+                  const SizedBox(
                     height: 70,
                   ),
                   Text(
-                    "Belum ada akun?",
+                    "Selamat Datang",
                     style: GoogleFonts.manrope(
                       textStyle: TextStyle(
                           color: MyColors.blackText,
@@ -34,7 +34,7 @@ class Register extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Buat akunmu sekarang!",
+                    "Kembali jelajah Purwakarta!",
                     style: GoogleFonts.manrope(
                       textStyle: TextStyle(
                           color: MyColors.blackText,
@@ -42,10 +42,10 @@ class Register extends StatelessWidget {
                           fontWeight: FontWeight.w300),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
-                  Container(
+                  SizedBox(
                     height: 60,
                     width: MediaQuery.of(context).size.width / 1.2,
                     child: TextField(
@@ -68,10 +68,10 @@ class Register extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Container(
+                  SizedBox(
                     height: 60,
                     width: MediaQuery.of(context).size.width / 1.2,
                     child: TextField(
@@ -94,7 +94,7 @@ class Register extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Container(
@@ -102,7 +102,7 @@ class Register extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: MyColors.DarkGrey),
+                        color: MyColors.darkGrey),
                     child: Center(
                       child: Text(
                         "Daftar",
@@ -115,37 +115,46 @@ class Register extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 150,
+                  const SizedBox(
+                    height: 20,
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Sudah memiliki akun?",
+                  Text(
+                    "Lupa Password",
+                    style: GoogleFonts.manrope(
+                      textStyle: TextStyle(
+                          color: MyColors.blackText,
+                          fontSize: MyFontSize.medium1,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Belum memiliki akun?",
+                        style: GoogleFonts.manrope(
+                          textStyle: TextStyle(
+                              color: MyColors.blackText,
+                              fontSize: MyFontSize.medium1,
+                              fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Text(
+                          "Daftar",
                           style: GoogleFonts.manrope(
                             textStyle: TextStyle(
                                 color: MyColors.blackText,
                                 fontSize: MyFontSize.medium1,
-                                fontWeight: FontWeight.w300),
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.only(left: 5),
-                          child: Text(
-                            "Masuk",
-                            style: GoogleFonts.manrope(
-                              textStyle: TextStyle(
-                                  color: MyColors.blackText,
-                                  fontSize: MyFontSize.medium1,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
