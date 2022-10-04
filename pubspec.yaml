@@ -27,17 +27,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  dotted_border: ^2.0.0+2
   flutter:
     sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+
+  cupertino_icons: ^1.0.5
+  google_fonts: ^3.0.1
+  dotted_border: ^2.0.0+2 # border titik2
+  page_transition: ^2.0.9 # Navigator yang bisa dianimasikan transisinya, misal dari kiri ke kanan dll
 
 dev_dependencies:
-  google_fonts: ^3.0.1
-
   flutter_test:
     sdk: flutter
 

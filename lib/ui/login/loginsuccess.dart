@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
-import 'package:purwakarta_app/widget/logo.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 
 class Loginscs extends StatelessWidget {
   const Loginscs({Key? key}) : super(key: key);
@@ -12,7 +11,7 @@ class Loginscs extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
@@ -27,7 +26,7 @@ class Loginscs extends StatelessWidget {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width / 1.3,
-                    padding: EdgeInsets.only(top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
                     child: Text(
                       "Permohonan verifikasi anda sedang kami proses",
                       style: GoogleFonts.manrope(
@@ -39,7 +38,7 @@ class Loginscs extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width / 1.3,
                     child: Text(
                         "Kami akan beritahukan lebih lanjut maksimal 2x24 jam setelah proses verifikasi",

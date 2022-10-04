@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 
 class Register3 extends StatelessWidget {
   const Register3({Key? key}) : super(key: key);
@@ -11,12 +11,12 @@ class Register3 extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
                   Align(
@@ -49,10 +49,10 @@ class Register3 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
-                  Container(
+                  SizedBox(
                     height: 60,
                     width: MediaQuery.of(context).size.width / 1.2,
                     child: TextField(
@@ -75,7 +75,7 @@ class Register3 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
@@ -83,7 +83,7 @@ class Register3 extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: MyColors.DarkGrey),
+                        color: MyColors.darkGrey),
                     child: Center(
                       child: Text(
                         "Verifikasi",

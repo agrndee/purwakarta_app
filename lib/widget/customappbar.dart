@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 
-class customAppbar extends StatelessWidget {
-  const customAppbar({Key? key}) : super(key: key);
 
+class CustomAppbar extends StatelessWidget {
+  const CustomAppbar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
@@ -24,7 +24,7 @@ class customAppbar extends StatelessWidget {
               "Coba",
               style: GoogleFonts.sourceSansPro(
                   fontSize: MyFontSize.small3,
-                  color: MyColors.DarkGrey,
+                  color: MyColors.darkGrey,
                   fontWeight: FontWeight.w500),
             ),
           ),
@@ -33,7 +33,7 @@ class customAppbar extends StatelessWidget {
           ),
           Divider(
             height: 4,
-            color: MyColors.DarkGrey,
+            color: MyColors.darkGrey,
             thickness: 4,
           ),
         ],

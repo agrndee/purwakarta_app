@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:purwakarta_app/widget/constant.dart';
+import 'package:purwakarta_app/constant/constant.dart';
 import 'package:dotted_border/dotted_border.dart';
 
 class Register6 extends StatelessWidget {
@@ -12,12 +12,12 @@ class Register6 extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
                   Align(
@@ -50,16 +50,16 @@ class Register6 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
                   DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(12),
-                    padding: EdgeInsets.all(6),
+                    radius: const Radius.circular(12),
+                    padding: const EdgeInsets.all(6),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      child: Container(
+                      borderRadius: const BorderRadius.all(Radius.circular(12)),
+                      child: SizedBox(
                         height: 50,
                         width: MediaQuery.of(context).size.width / 1.2,
                         child: Center(
@@ -90,11 +90,11 @@ class Register6 extends StatelessWidget {
                   ),
                   DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(12),
-                    padding: EdgeInsets.all(6),
+                    radius: const Radius.circular(12),
+                    padding: const EdgeInsets.all(6),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      child: Container(
+                      borderRadius: const BorderRadius.all(Radius.circular(12)),
+                      child: SizedBox(
                         height: 50,
                         width: MediaQuery.of(context).size.width / 1.2,
                         child: Center(
@@ -111,7 +111,7 @@ class Register6 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 170,
                   ),
                   Padding(
@@ -120,7 +120,7 @@ class Register6 extends StatelessWidget {
                       "Lewati",
                       style: GoogleFonts.manrope(
                         textStyle: TextStyle(
-                            color: MyColors.DarkGrey,
+                            color: MyColors.darkGrey,
                             fontSize: MyFontSize.medium1,
                             fontWeight: FontWeight.w300),
                       ),
@@ -133,7 +133,7 @@ class Register6 extends StatelessWidget {
                       width: MediaQuery.of(context).size.width / 1.2,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: MyColors.DarkGrey),
+                          color: MyColors.darkGrey),
                       child: Center(
                         child: Text(
                           "Lanjutkan",
