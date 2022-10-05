@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:purwakarta_app/widget/step_appbar.dart';
 
 class Register6 extends StatelessWidget {
   const Register6({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class Register6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: StepAppBar(index: 6, length: 6),
       body: SafeArea(
         child: Stack(
           children: [
@@ -112,7 +114,7 @@ class Register6 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 170,
+                    height: 80,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 5),

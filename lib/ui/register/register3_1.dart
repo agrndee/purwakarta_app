@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
+import 'package:purwakarta_app/widget/step_appbar.dart';
+import 'package:purwakarta_app/ui/register/register4.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Register31 extends StatelessWidget {
   const Register31({Key? key}) : super(key: key);
@@ -8,6 +11,7 @@ class Register31 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: StepAppBar(index: 3, length: 6),
       body: SafeArea(
         child: Stack(
           children: [
@@ -178,20 +182,29 @@ class Register31 extends StatelessWidget {
                   const SizedBox(
                     height: 80,
                   ),
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: MyColors.darkGrey),
-                    child: Center(
-                      child: Text(
-                        "Lanjutkan",
-                        style: GoogleFonts.manrope(
-                          textStyle: TextStyle(
-                              color: MyColors.white,
-                              fontSize: MyFontSize.medium2,
-                              fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: const Register4(),
+                              type: PageTransitionType.leftToRight));
+                    },
+                    child: Container(
+                      height: 60,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: MyColors.darkGrey),
+                      child: Center(
+                        child: Text(
+                          "Lanjutkan",
+                          style: GoogleFonts.manrope(
+                            textStyle: TextStyle(
+                                color: MyColors.white,
+                                fontSize: MyFontSize.medium2,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),

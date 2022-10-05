@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
+import 'package:purwakarta_app/ui/register/register1.dart';
 import 'package:purwakarta_app/widget/logo.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:purwakarta_app/ui/register/register1.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}) : super(key: key);
@@ -132,15 +135,24 @@ class Register extends StatelessWidget {
                                 fontWeight: FontWeight.w300),
                           ),
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: Text(
-                            "Masuk",
-                            style: GoogleFonts.manrope(
-                              textStyle: TextStyle(
-                                  color: MyColors.blackText,
-                                  fontSize: MyFontSize.medium1,
-                                  fontWeight: FontWeight.bold),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    child: const Register1(),
+                                    type: PageTransitionType.leftToRight));
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Text(
+                              "Masuk",
+                              style: GoogleFonts.manrope(
+                                textStyle: TextStyle(
+                                    color: MyColors.blackText,
+                                    fontSize: MyFontSize.medium1,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),

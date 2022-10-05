@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:purwakarta_app/widget/step_appbar.dart';
+import 'package:purwakarta_app/ui/register/register6.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Register5 extends StatelessWidget {
   const Register5({Key? key}) : super(key: key);
@@ -9,6 +12,7 @@ class Register5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: StepAppBar(index: 5, length: 6),
       body: SafeArea(
         child: Stack(
           children: [
@@ -112,10 +116,16 @@ class Register5 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 200,
+                    height: 100,
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: const Register6(),
+                              type: PageTransitionType.leftToRight));
+                    },
                     child: Container(
                       height: 60,
                       width: MediaQuery.of(context).size.width / 1.2,
