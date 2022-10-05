@@ -7,10 +7,10 @@ class Konfirmasi_last extends StatefulWidget {
   const Konfirmasi_last({Key? key}) : super(key: key);
 
   @override
-  State<Konfirmasi_last> createState() => _KonfirmasiState();
+  State<Konfirmasi_last> createState() => _Konfirmasi_lastState();
 }
 
-class _KonfirmasiState extends State<Konfirmasi_last> {
+class _Konfirmasi_lastState extends State<Konfirmasi_last> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

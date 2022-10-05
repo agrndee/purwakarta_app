@@ -18,6 +18,9 @@ import 'package:purwakarta_app/home_screen.dart';
 import 'package:purwakarta_app/ui/konfirmasi/konfirmasi.dart';
 import 'package:purwakarta_app/ui/konfirmasi/konfirmasi_last.dart';
 import 'package:purwakarta_app/ui/status.dart';
+import 'package:purwakarta_app/ui/peta/pilih_peta.dart';
+import 'package:purwakarta_app/ui/peta/mark_peta.dart';
+import 'package:purwakarta_app/ui/peta/mark_done.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,9 +33,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'namaapp',
+      title: 'purwakarta_mobile',
       theme: ThemeData(),
-      home: Status(),
+      home: HomeScreen(),
     );
   }
 }
