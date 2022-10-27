@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 
-class Loginscs extends StatelessWidget {
-  const Loginscs({Key? key}) : super(key: key);
+class Verifikasi extends StatelessWidget {
+  const Verifikasi({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

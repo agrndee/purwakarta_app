@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyColors {
+  static Color mainColor = const Color.fromRGBO(17, 69, 72, 1);
+  static Color file = const Color.fromRGBO(60, 110, 113, 1);
+  static Color shadow = const Color.fromRGBO(158, 158, 158, 1);
   static Color blackText = const Color(0xFF1C1E1D);
   static Color darkGrey = const Color.fromARGB(255, 51, 53, 52);
   static Color white = const Color(0xFFFFFFFF);
@@ -14,6 +17,7 @@ class MyColors {
   static Color softGreen = const Color(0xFFE9FFEA);
   static Color turqoise = const Color(0xFF0EB8BD);
   static Color darkTurqoise = const Color(0xFF0D969A);
+  static Color verif = const Color(0xFF61D84D);
 }
 
 class MyFontSize {
@@ -24,6 +28,7 @@ class MyFontSize {
   static double medium2 = 16;
   static double large1 = 18;
   static double large2 = 20;
+  static double large2_1 = 24;
   static double large3 = 32;
 }
 

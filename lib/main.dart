@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:purwakarta_app/ui/login/login.dart';
-import 'package:purwakarta_app/ui/register/register.dart';
-import 'package:purwakarta_app/ui/register/register3.dart';
-import 'package:purwakarta_app/ui/register/register3_1.dart';
-import 'package:purwakarta_app/widget/customappbar.dart';
-import 'package:purwakarta_app/ui/register/register1.dart';
-import 'package:purwakarta_app/ui/register/register2.dart';
-import 'package:purwakarta_app/ui/register/register3.dart';
-import 'package:purwakarta_app/ui/register/register4.dart';
-import 'package:purwakarta_app/ui/register/register5.dart';
-import 'package:purwakarta_app/ui/register/register6.dart';
-import 'package:purwakarta_app/ui/login/loginsuccess.dart';
+import 'package:purwakarta_app/map_screen.dart';
+import 'package:purwakarta_app/ui/login/landing.dart';
+import 'package:purwakarta_app/ui/peta/profilruang.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'namaapp',
+      title: 'purwakarta_mobile',
       theme: ThemeData(),
-      home: Register1(),
+      home: const Landing(),
     );
   }
 }

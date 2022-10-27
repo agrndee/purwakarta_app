@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:purwakarta_app/ui/verifikasi.dart';
+import 'package:purwakarta_app/widget/step_appbar.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Register6 extends StatelessWidget {
   const Register6({Key? key}) : super(key: key);
@@ -9,6 +12,7 @@ class Register6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const StepAppBar(index: 6, length: 6),
       body: SafeArea(
         child: Stack(
           children: [
@@ -18,59 +22,54 @@ class Register6 extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 100,
+                    height: 30,
                   ),
-                  Align(
+                  Container(
                     alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 30),
-                      child: Text(
-                        "Anda memiliki NPWP?",
-                        style: GoogleFonts.manrope(
-                          textStyle: TextStyle(
-                              color: MyColors.blackText,
-                              fontSize: MyFontSize.large2,
-                              fontWeight: FontWeight.bold),
-                        ),
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Text(
+                      "Anda memiliki NPWP?",
+                      style: GoogleFonts.manrope(
+                        textStyle: TextStyle(
+                            color: MyColors.blackText,
+                            fontSize: MyFontSize.large2,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  Align(
+                  Container(
                     alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 30, top: 10),
-                      child: Text(
-                        "Upload atau foto NPWP yang anda miliki",
-                        style: GoogleFonts.manrope(
-                          textStyle: TextStyle(
-                              color: MyColors.blackText,
-                              fontSize: MyFontSize.medium1,
-                              fontWeight: FontWeight.w300),
-                        ),
+                    padding: const EdgeInsets.only(left: 30, top: 10),
+                    child: Text(
+                      "Upload atau foto NPWP yang anda miliki",
+                      style: GoogleFonts.manrope(
+                        textStyle: TextStyle(
+                            color: MyColors.blackText,
+                            fontSize: MyFontSize.medium1,
+                            fontWeight: FontWeight.w300),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 100,
+                    height: 30,
                   ),
                   DottedBorder(
+                    color: MyColors.shadow,
+                    dashPattern: const [10, 6],
                     borderType: BorderType.RRect,
                     radius: const Radius.circular(12),
-                    padding: const EdgeInsets.all(6),
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
-                      child: SizedBox(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width / 1.2,
-                        child: Center(
-                          child: Text(
-                            "Foto",
-                            style: GoogleFonts.manrope(
-                              textStyle: TextStyle(
-                                  color: MyColors.blackText,
-                                  fontSize: MyFontSize.medium1,
-                                  fontWeight: FontWeight.w300),
-                            ),
+                    padding: const EdgeInsets.all(4),
+                    child: SizedBox(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      child: Center(
+                        child: Text(
+                          "Foto",
+                          style: GoogleFonts.manrope(
+                            textStyle: TextStyle(
+                                color: MyColors.shadow,
+                                fontSize: MyFontSize.medium1,
+                                fontWeight: FontWeight.w300),
                           ),
                         ),
                       ),
@@ -89,59 +88,67 @@ class Register6 extends StatelessWidget {
                     ),
                   ),
                   DottedBorder(
+                    color: MyColors.shadow,
+                    dashPattern: const [10, 6],
                     borderType: BorderType.RRect,
                     radius: const Radius.circular(12),
-                    padding: const EdgeInsets.all(6),
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
-                      child: SizedBox(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width / 1.2,
-                        child: Center(
-                          child: Text(
-                            "Unggah dokumen",
-                            style: GoogleFonts.manrope(
-                              textStyle: TextStyle(
-                                  color: MyColors.blackText,
-                                  fontSize: MyFontSize.medium1,
-                                  fontWeight: FontWeight.w300),
-                            ),
+                    padding: const EdgeInsets.all(4),
+                    child: SizedBox(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      child: Center(
+                        child: Text(
+                          "Unggah Dokumen",
+                          style: GoogleFonts.manrope(
+                            textStyle: TextStyle(
+                                color: MyColors.shadow,
+                                fontSize: MyFontSize.medium1,
+                                fontWeight: FontWeight.w300),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 170,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 3,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 5),
+                    padding: const EdgeInsets.only(bottom: 10),
                     child: Text(
                       "Lewati",
                       style: GoogleFonts.manrope(
                         textStyle: TextStyle(
-                            color: MyColors.darkGrey,
+                            color: MyColors.shadow,
                             fontSize: MyFontSize.medium1,
                             fontWeight: FontWeight.w300),
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      height: 60,
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: MyColors.darkGrey),
-                      child: Center(
-                        child: Text(
-                          "Lanjutkan",
-                          style: GoogleFonts.manrope(
-                            textStyle: TextStyle(
-                                color: MyColors.white,
-                                fontSize: MyFontSize.medium2,
-                                fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: const Verifikasi(),
+                              type: PageTransitionType.leftToRight));
+                    },
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: MyColors.mainColor),
+                        child: Center(
+                          child: Text(
+                            "Lanjutkan",
+                            style: GoogleFonts.manrope(
+                              textStyle: TextStyle(
+                                  color: MyColors.white,
+                                  fontSize: MyFontSize.medium2,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),

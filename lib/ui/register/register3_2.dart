@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 import 'package:purwakarta_app/widget/step_appbar.dart';
-import 'package:purwakarta_app/ui/register/register3_2.dart';
+import 'package:purwakarta_app/ui/register/register4.dart';
 import 'package:page_transition/page_transition.dart';
 
-class Register31 extends StatelessWidget {
-  const Register31({Key? key}) : super(key: key);
+class Register32 extends StatelessWidget {
+  const Register32({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +58,7 @@ class Register31 extends StatelessWidget {
                         width: 30,
                       ),
                       Container(
+                        color: MyColors.softGrey,
                         margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
@@ -71,12 +72,13 @@ class Register31 extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(color: MyColors.softGrey),
+                              borderSide: BorderSide(color: MyColors.mainColor),
                             ),
                           ),
                         ),
                       ),
                       Container(
+                        color: MyColors.softGrey,
                         margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
@@ -90,12 +92,13 @@ class Register31 extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(color: MyColors.softGrey),
+                              borderSide: BorderSide(color: MyColors.mainColor),
                             ),
                           ),
                         ),
                       ),
                       Container(
+                        color: MyColors.softGrey,
                         margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
@@ -109,12 +112,13 @@ class Register31 extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(color: MyColors.softGrey),
+                              borderSide: BorderSide(color: MyColors.mainColor),
                             ),
                           ),
                         ),
                       ),
                       Container(
+                        color: MyColors.softGrey,
                         margin: const EdgeInsets.all(10),
                         height: 50,
                         width: 40,
@@ -128,7 +132,7 @@ class Register31 extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(color: MyColors.softGrey),
+                              borderSide: BorderSide(color: MyColors.mainColor),
                             ),
                           ),
                         ),
@@ -181,7 +185,7 @@ class Register31 extends StatelessWidget {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: const Register32(),
+                              child: const Register4(),
                               type: PageTransitionType.leftToRight));
                     },
                     child: Container(
@@ -189,7 +193,7 @@ class Register31 extends StatelessWidget {
                       width: MediaQuery.of(context).size.width / 1.2,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: MyColors.softGrey),
+                          color: MyColors.mainColor),
                       child: Center(
                         child: Text(
                           "Lanjutkan",
