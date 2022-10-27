@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:purwakarta_app/ui/dashboard/dashboard.dart';
 import 'package:purwakarta_app/ui/dialog/dialog_close_app.dart';
 import 'package:purwakarta_app/ui/menu_apply_permission.dart';
 import 'package:purwakarta_app/ui/menu_help.dart';
 import 'package:purwakarta_app/ui/menu_profile.dart';
 import 'package:purwakarta_app/ui/permohonan/permohonan.dart';
+
 import 'constant/constant.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -78,9 +80,18 @@ class HomeScreenState extends State<HomeScreen> {
             unselectedItemColor: MyColors.grey,
             type: BottomNavigationBarType.fixed,
             onTap: (index) async {
-              setState(() {
-                currentIndex = index;
-              });
+              //yang ditap tombol ajukan ijin (index=2) maka homescreen tidak ganti index melainkan menuju ke Permohonan menggunakan push
+              if (currentIndex == 2) {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        child: const Permohonan(),
+                        type: PageTransitionType.leftToRight));
+              } else {
+                setState(() {
+                  currentIndex = index;
+                });
+              }
             },
             //list bottom navigationnya isinya ada 5 diatas dangan variable listBottomNav
             items: listBottomNav,
