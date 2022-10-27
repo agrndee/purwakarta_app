@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 import 'package:purwakarta_app/widget/logo.dart';
+import 'package:purwakarta_app/home_screen.dart';
+import 'package:purwakarta_app/ui/register/register.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -17,24 +20,29 @@ class Login extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    margin: const EdgeInsets.only(left: 30, top: 30),
+                    child: const Icon(Icons.close, size: 20),
+                  ),
                   const SizedBox(
                     height: 50,
                   ),
                   const Logo(),
                   const SizedBox(
-                    height: 70,
+                    height: 45,
                   ),
                   Text(
-                    "Selamat Datang",
+                    "Anda belum memiliki akun",
                     style: GoogleFonts.manrope(
                       textStyle: TextStyle(
                           color: MyColors.blackText,
-                          fontSize: MyFontSize.large3,
+                          fontSize: MyFontSize.large2_1,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Text(
-                    "Kembali jelajah Purwakarta!",
+                    "Masuk atau registrasi untuk akses fitur ini",
                     style: GoogleFonts.manrope(
                       textStyle: TextStyle(
                           color: MyColors.blackText,
@@ -57,7 +65,7 @@ class Login extends StatelessWidget {
                       // textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: MyColors.blackText),
                         ),
                         hintText: "Email",
@@ -69,7 +77,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   SizedBox(
                     height: 60,
@@ -83,7 +91,7 @@ class Login extends StatelessWidget {
                       // textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: MyColors.blackText),
                         ),
                         hintText: "Password",
@@ -95,40 +103,49 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 35,
                   ),
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: MyColors.darkGrey),
-                    child: Center(
-                      child: Text(
-                        "Daftar",
-                        style: GoogleFonts.manrope(
-                          textStyle: TextStyle(
-                              color: MyColors.white,
-                              fontSize: MyFontSize.medium2,
-                              fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: const HomeScreen(),
+                              type: PageTransitionType.leftToRight));
+                    },
+                    child: Container(
+                      height: 60,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: MyColors.mainColor),
+                      child: Center(
+                        child: Text(
+                          "Masuk",
+                          style: GoogleFonts.manrope(
+                            textStyle: TextStyle(
+                                color: MyColors.white,
+                                fontSize: MyFontSize.medium2,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Text(
                     "Lupa Password",
                     style: GoogleFonts.manrope(
                       textStyle: TextStyle(
-                          color: MyColors.blackText,
+                          color: MyColors.shadow,
                           fontSize: MyFontSize.medium1,
                           fontWeight: FontWeight.w300),
                     ),
                   ),
-                  const SizedBox(
-                    height: 100,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 7,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -142,15 +159,24 @@ class Login extends StatelessWidget {
                               fontWeight: FontWeight.w300),
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          "Daftar",
-                          style: GoogleFonts.manrope(
-                            textStyle: TextStyle(
-                                color: MyColors.blackText,
-                                fontSize: MyFontSize.medium1,
-                                fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: const Register(),
+                                  type: PageTransitionType.leftToRight));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 5),
+                          child: Text(
+                            "Daftar",
+                            style: GoogleFonts.manrope(
+                              textStyle: TextStyle(
+                                  color: MyColors.blackText,
+                                  fontSize: MyFontSize.medium1,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),

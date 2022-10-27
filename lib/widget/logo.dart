@@ -18,6 +18,7 @@ class Logo extends StatelessWidget {
           ),
         ),
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Sitarung Mobile",

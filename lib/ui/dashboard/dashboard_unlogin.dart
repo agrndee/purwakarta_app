@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
+import 'package:purwakarta_app/map_screen.dart';
+import 'package:purwakarta_app/widget/berita.dart';
+import 'package:page_transition/page_transition.dart';
 
-class Dashboard1 extends StatelessWidget {
-  const Dashboard1({Key? key}) : super(key: key);
+class Dashboard_unlogin extends StatelessWidget {
+  const Dashboard_unlogin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,34 +17,39 @@ class Dashboard1 extends StatelessWidget {
             ListView(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: MyColors.softGrey,
+                  height: MediaQuery.of(context).size.height / 3,
+                  color: MyColors.mainColor,
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 100,
+                      const SizedBox(
+                        height: 120,
                       ),
                       Align(
-                        alignment: Alignment.topLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 23.0),
-                          child: Container(
-                            height: 50,
-                            width: 120,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: MyColors.white),
-                            child: Center(
-                              child: Text(
-                                "Masuk",
-                                style: GoogleFonts.manrope(
-                                  textStyle: TextStyle(
-                                      color: MyColors.blackText,
-                                      fontSize: MyFontSize.medium2,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ),
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          width: 150,
+                          margin: const EdgeInsets.only(left: 30),
+                          child: Text(
+                            "Sistem Informasi Tata Ruang",
+                            style: GoogleFonts.manrope(
+                              textStyle: TextStyle(
+                                  color: MyColors.white,
+                                  fontSize: MyFontSize.large1,
+                                  fontWeight: FontWeight.bold),
                             ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        padding: const EdgeInsets.only(left: 30, top: 6),
+                        child: Text(
+                          "Kabupaten Purwakarta",
+                          style: GoogleFonts.manrope(
+                            textStyle: TextStyle(
+                                color: MyColors.white,
+                                fontSize: MyFontSize.medium1,
+                                fontWeight: FontWeight.w300),
                           ),
                         ),
                       ),
@@ -52,40 +60,73 @@ class Dashboard1 extends StatelessWidget {
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   child: Column(children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Align(
+                    Container(
                       alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(
-                          "Pusat Informasi",
-                          style: GoogleFonts.manrope(
-                            textStyle: TextStyle(
-                                color: MyColors.blackText,
-                                fontSize: MyFontSize.large1,
-                                fontWeight: FontWeight.bold),
-                          ),
+                      padding:
+                          const EdgeInsets.only(bottom: 20, left: 30, top: 30),
+                      child: Text(
+                        "Berita Purwakarta,",
+                        style: GoogleFonts.manrope(
+                          textStyle: TextStyle(
+                              color: MyColors.blackText,
+                              fontSize: MyFontSize.medium2,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 4,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: const [
+                          SizedBox(width: 30),
+                          Berita(),
+                          Berita(),
+                          Berita(),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.only(left: 30, top: 3),
+                      child: Text(
+                        "Informasi Ruang Kabupaten",
+                        style: GoogleFonts.manrope(
+                          textStyle: TextStyle(
+                              color: MyColors.blackText,
+                              fontSize: MyFontSize.medium2,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Container(
-                            margin: EdgeInsets.all(10),
-                            height: 100,
-                            width: 160,
-                            color: MyColors.softGrey,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    child: const MapScreen(),
+                                    type: PageTransitionType.leftToRight));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(
+                                    left: 25, top: 30, bottom: 20),
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(200),
+                                    color: MyColors.softGrey),
+                              ),
+                              Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 20, bottom: 10),
+                                    const EdgeInsets.only(left: 30, bottom: 40),
                                 child: Text(
-                                  "Peta",
+                                  "Profil Ruang",
                                   style: GoogleFonts.manrope(
                                     textStyle: TextStyle(
                                         color: MyColors.blackText,
@@ -94,21 +135,25 @@ class Dashboard1 extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.all(10),
-                          height: 100,
-                          width: 160,
-                          color: MyColors.softGrey,
-                          child: Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Padding(
+                        Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  left: 25, top: 30, bottom: 20),
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(200),
+                                  color: MyColors.softGrey),
+                            ),
+                            Padding(
                               padding:
-                                  const EdgeInsets.only(left: 20, bottom: 10),
+                                  const EdgeInsets.only(left: 30, bottom: 40),
                               child: Text(
-                                "Tata Ruang",
+                                "RT/RW",
                                 style: GoogleFonts.manrope(
                                   textStyle: TextStyle(
                                       color: MyColors.blackText,
@@ -117,66 +162,96 @@ class Dashboard1 extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  left: 25, top: 30, bottom: 20),
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(200),
+                                  color: MyColors.softGrey),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 30, bottom: 40),
+                              child: Text(
+                                "RDTR",
+                                style: GoogleFonts.manrope(
+                                  textStyle: TextStyle(
+                                      color: MyColors.blackText,
+                                      fontSize: MyFontSize.medium1,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(
-                          "Menemukan masalah?",
-                          style: GoogleFonts.manrope(
-                            textStyle: TextStyle(
-                                color: MyColors.blackText,
-                                fontSize: MyFontSize.large1,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(
-                          "Berikan pengaduanmu kepada kami",
-                          style: GoogleFonts.manrope(
-                            textStyle: TextStyle(
-                                color: MyColors.blackText,
-                                fontSize: MyFontSize.medium1,
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Container(
-                        margin: EdgeInsets.only(left: 30, top: 30),
-                        height: 100,
-                        width: 160,
-                        color: MyColors.softGrey,
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.only(left: 20, bottom: 10),
+                    Container(
+                      height: 140,
+                      width: MediaQuery.of(context).size.width,
+                      color: MyColors.softGrey,
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.topLeft,
+                            padding: const EdgeInsets.only(left: 30, top: 20),
                             child: Text(
-                              "Pengaduan",
+                              "Permohonan Kesesuaian Tata Ruang",
                               style: GoogleFonts.manrope(
                                 textStyle: TextStyle(
                                     color: MyColors.blackText,
-                                    fontSize: MyFontSize.medium1,
+                                    fontSize: MyFontSize.medium2,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            padding: const EdgeInsets.only(left: 30, top: 5),
+                            child: Text(
+                              "Ajukan Permohonan Ruang",
+                              style: GoogleFonts.manrope(
+                                textStyle: TextStyle(
+                                    color: MyColors.blackText,
+                                    fontSize: MyFontSize.small3,
                                     fontWeight: FontWeight.w400),
                               ),
                             ),
                           ),
-                        ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 30, top: 30),
+                              width: 200,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: MyColors.white),
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Ajukan sekarang",
+                                    style: GoogleFonts.manrope(
+                                      textStyle: TextStyle(
+                                          color: MyColors.blackText,
+                                          fontSize: MyFontSize.medium1,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                  Container(width: 50),
+                                  const Icon(Icons.navigate_next),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ]),

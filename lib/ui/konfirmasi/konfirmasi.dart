@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:purwakarta_app/widget/customappbar.dart';
+import 'package:purwakarta_app/ui/konfirmasi/konfirmasi_last.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Konfirmasi extends StatefulWidget {
   const Konfirmasi({Key? key}) : super(key: key);
@@ -14,6 +17,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const Customappbar(title: 'Konfirmasi'),
       body: SafeArea(
         child: Stack(
           children: [
@@ -22,7 +26,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Padding(
@@ -40,7 +44,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Column(
@@ -50,7 +54,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                         width: MediaQuery.of(context).size.width / 1.2,
                         decoration: BoxDecoration(
                             color: MyColors.softGrey,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topRight: Radius.circular(10),
                                 topLeft: Radius.circular(10))),
                       ),
@@ -60,7 +64,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                         decoration: BoxDecoration(
                             color: MyColors.white,
                             border: Border.all(color: MyColors.softGrey),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 bottomRight: Radius.circular(10),
                                 bottomLeft: Radius.circular(10))),
                         child: Column(children: [
@@ -79,7 +83,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 70,
                               ),
                               Text(
@@ -108,7 +112,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 100,
                               ),
                               Text(
@@ -126,7 +130,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Divider(
@@ -161,7 +165,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   DottedBorder(
@@ -216,7 +220,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 10),
                     height: 70,
                     width: MediaQuery.of(context).size.width / 1.1,
                     child: Row(
@@ -226,7 +230,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
                           width: MediaQuery.of(context).size.width / 1.4,
                           decoration: BoxDecoration(
                               border: Border.all(color: MyColors.darkGrey),
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   bottomLeft: Radius.circular(10))),
                           child: Center(
@@ -246,31 +250,40 @@ class _KonfirmasiState extends State<Konfirmasi> {
                           width: MediaQuery.of(context).size.width / 6,
                           decoration: BoxDecoration(
                               border: Border.all(color: MyColors.darkGrey),
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(10),
                                   bottomRight: Radius.circular(10))),
-                          child: Icon(Icons.arrow_back),
+                          child: const Icon(Icons.arrow_back),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 70,
+                  const SizedBox(
+                    height: 30,
                   ),
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: MyColors.darkGrey),
-                    child: Center(
-                      child: Text(
-                        "Lanjutkan",
-                        style: GoogleFonts.manrope(
-                          textStyle: TextStyle(
-                              color: MyColors.white,
-                              fontSize: MyFontSize.medium2,
-                              fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: const Konfirmasi_last(),
+                              type: PageTransitionType.leftToRight));
+                    },
+                    child: Container(
+                      height: 60,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: MyColors.darkGrey),
+                      child: Center(
+                        child: Text(
+                          "Lanjutkan",
+                          style: GoogleFonts.manrope(
+                            textStyle: TextStyle(
+                                color: MyColors.white,
+                                fontSize: MyFontSize.medium2,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),

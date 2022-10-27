@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
+import 'package:purwakarta_app/widget/customappbar.dart';
 
 class Status extends StatelessWidget {
   const Status({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class Status extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const Customappbar(title: 'Status Proses'),
       body: SafeArea(
         child: Stack(
           children: [
@@ -16,7 +18,7 @@ class Status extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Container(
@@ -24,7 +26,7 @@ class Status extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
                         color: MyColors.softGrey,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(10),
                             topLeft: Radius.circular(10))),
                   ),
@@ -46,7 +48,7 @@ class Status extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 30, top: 20),
+                        margin: const EdgeInsets.only(left: 30, top: 20),
                         height: 50,
                         width: 40,
                         child: Icon(
@@ -59,7 +61,7 @@ class Status extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 20),
+                            margin: const EdgeInsets.only(top: 20),
                             width: MediaQuery.of(context).size.width / 1.5,
                             child: Text(
                               "Identifikasi berkas",
@@ -71,7 +73,7 @@ class Status extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width / 1.5,
                             child: Text(
                               "23 Maret 2022, 14.05",
@@ -90,10 +92,10 @@ class Status extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 30),
+                        margin: const EdgeInsets.only(left: 30),
                         height: 50,
                         width: 40,
-                        child: Icon(
+                        child: const Icon(
                           Icons.circle_rounded,
                           size: 15,
                         ),
@@ -101,7 +103,7 @@ class Status extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width / 1.5,
                             child: Text(
                               "Survey Lokasi",
@@ -113,7 +115,7 @@ class Status extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width / 1.5,
                             child: Text(
                               "23 Maret 2022, 14.05",

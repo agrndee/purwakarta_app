@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:purwakarta_app/constant/constant.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:purwakarta_app/ui/permohonan/permohonan2.dart';
 
 class Mark_done extends StatefulWidget {
   const Mark_done({Key? key}) : super(key: key);
@@ -23,18 +25,18 @@ class _Mark_doneState extends State<Mark_done> {
                   width: MediaQuery.of(context).size.width,
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 5),
+                  margin: const EdgeInsets.only(left: 5),
                   height: MediaQuery.of(context).size.height / 1.9,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: MyColors.white,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)),
                   ),
                   child: Column(children: [
                     Container(
-                      margin: EdgeInsets.only(top: 20, bottom: 30),
+                      margin: const EdgeInsets.only(top: 20, bottom: 30),
                       height: 5,
                       width: 50,
                       decoration: BoxDecoration(
@@ -43,7 +45,7 @@ class _Mark_doneState extends State<Mark_done> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 30),
+                      padding: const EdgeInsets.only(left: 30, bottom: 10),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -58,7 +60,7 @@ class _Mark_doneState extends State<Mark_done> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 30),
+                      padding: const EdgeInsets.only(left: 30, right: 10),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -67,20 +69,20 @@ class _Mark_doneState extends State<Mark_done> {
                             textStyle: TextStyle(
                                 color: MyColors.blackText,
                                 fontSize: MyFontSize.medium1,
-                                fontWeight: FontWeight.w300),
+                                fontWeight: FontWeight.w400),
                           ),
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: const EdgeInsets.only(top: 10),
                       height: 70,
                       width: MediaQuery.of(context).size.width / 1.2,
                       decoration: BoxDecoration(
                           border: Border.all(
                             color: MyColors.grey,
                           ),
-                          borderRadius: BorderRadius.circular(5)),
+                          borderRadius: BorderRadius.circular(8)),
                       child: Column(children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 10, top: 10),
@@ -92,7 +94,7 @@ class _Mark_doneState extends State<Mark_done> {
                                 textStyle: TextStyle(
                                     color: MyColors.grey,
                                     fontSize: MyFontSize.small3,
-                                    fontWeight: FontWeight.bold),
+                                    fontWeight: FontWeight.w400),
                               ),
                             ),
                           ),
@@ -107,7 +109,7 @@ class _Mark_doneState extends State<Mark_done> {
                                 textStyle: TextStyle(
                                     color: MyColors.blackText,
                                     fontSize: MyFontSize.medium2,
-                                    fontWeight: FontWeight.w300),
+                                    fontWeight: FontWeight.w400),
                               ),
                             ),
                           ),
@@ -115,14 +117,14 @@ class _Mark_doneState extends State<Mark_done> {
                       ]),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: const EdgeInsets.only(top: 15),
                       height: 70,
                       width: MediaQuery.of(context).size.width / 1.2,
                       decoration: BoxDecoration(
                           border: Border.all(
                             color: MyColors.softGrey,
                           ),
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(8),
                           color: MyColors.softGrey),
                       child: Column(children: [
                         Padding(
@@ -135,7 +137,7 @@ class _Mark_doneState extends State<Mark_done> {
                                 textStyle: TextStyle(
                                     color: MyColors.blackText,
                                     fontSize: MyFontSize.small3,
-                                    fontWeight: FontWeight.bold),
+                                    fontWeight: FontWeight.w400),
                               ),
                             ),
                           ),
@@ -150,28 +152,37 @@ class _Mark_doneState extends State<Mark_done> {
                                 textStyle: TextStyle(
                                     color: MyColors.blackText,
                                     fontSize: MyFontSize.medium2,
-                                    fontWeight: FontWeight.bold),
+                                    fontWeight: FontWeight.w700),
                               ),
                             ),
                           ),
                         ),
                       ]),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 30),
-                      height: 60,
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: MyColors.darkGrey),
-                      child: Center(
-                        child: Text(
-                          "Lanjutkan",
-                          style: GoogleFonts.manrope(
-                            textStyle: TextStyle(
-                                color: MyColors.white,
-                                fontSize: MyFontSize.medium2,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                child: const Permohonan2(),
+                                type: PageTransitionType.leftToRight));
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 30),
+                        height: 60,
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: MyColors.mainColor),
+                        child: Center(
+                          child: Text(
+                            "Simpan",
+                            style: GoogleFonts.manrope(
+                              textStyle: TextStyle(
+                                  color: MyColors.white,
+                                  fontSize: MyFontSize.medium2,
+                                  fontWeight: FontWeight.w400),
+                            ),
                           ),
                         ),
                       ),

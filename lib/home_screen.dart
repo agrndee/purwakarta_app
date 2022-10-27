@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:purwakarta_app/ui/dashboard/dashboard.dart';
 import 'package:purwakarta_app/ui/dialog/dialog_close_app.dart';
 import 'package:purwakarta_app/ui/menu_apply_permission.dart';
-import 'package:purwakarta_app/ui/menu_dashboard.dart';
 import 'package:purwakarta_app/ui/menu_help.dart';
 import 'package:purwakarta_app/ui/menu_profile.dart';
+import 'package:purwakarta_app/ui/permohonan/permohonan.dart';
 import 'constant/constant.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,6 +27,7 @@ class HomeScreenState extends State<HomeScreen> {
       child: (() {
         List<BottomNavigationBarItem> listBottomNav = [];
         final List<Widget> viewContainer = [];
+
         listBottomNav.add(const BottomNavigationBarItem(
           icon: Icon(
             Icons.home_outlined,
@@ -34,13 +35,21 @@ class HomeScreenState extends State<HomeScreen> {
           label: "Beranda",
         ));
         viewContainer.add(const Dashboard());
+
+        viewContainer.add(const MenuApplyPermission());
+        listBottomNav.add(const BottomNavigationBarItem(
+          icon: Icon(Icons.notifications),
+          label: "Notifikasi",
+        ));
+
         listBottomNav.add(const BottomNavigationBarItem(
           icon: Icon(
             Icons.note_add_outlined,
           ),
           label: "Ajukan Ijin",
         ));
-        viewContainer.add(const MenuApplyPermission());
+        viewContainer.add(const Permohonan());
+
         listBottomNav.add(const BottomNavigationBarItem(
           icon: Icon(
             Icons.help_outline,
@@ -48,6 +57,7 @@ class HomeScreenState extends State<HomeScreen> {
           label: "Bantuan",
         ));
         viewContainer.add(const MenuHelp());
+
         listBottomNav.add(const BottomNavigationBarItem(
           icon: Icon(
             Icons.person_outlined,
@@ -55,6 +65,7 @@ class HomeScreenState extends State<HomeScreen> {
           label: "Profil",
         ));
         viewContainer.add(const MenuProfile());
+
         return Scaffold(
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: MyColors.white,
